@@ -11,25 +11,14 @@ const path = require('path');
 const sharp = require('sharp');
 const { PNG } = require('pngjs');
 
-const ASSETS_DIR = path.join(
-  process.env.USERPROFILE || '',
-  '.cursor',
-  'projects',
-  'c-Users-denni-OneDrive-Desktop-yessir-arboris',
-  'assets'
-);
-
-const PREFIX =
-  'c__Users_denni_AppData_Roaming_Cursor_User_workspaceStorage_16f568642b0a583ee111603dd2493d2c_images_';
+/** Authoring folder in repo — replace these PNGs, then run: node apply-user-tree-sprites.js */
+const ASSETS_DIR = path.join(__dirname, 'source-images');
 
 const MAP = [
-  { name: 'SPRITE_DIRT', file: `${PREFIX}image-54179cab-db15-437f-a2b3-a0c0f0b45ad9.png` },
-  { name: 'SPRITE_SPROUT', file: `${PREFIX}image-3fac3167-d2da-429f-b0a8-900bd053938a.png` },
-  {
-    name: 'SPRITE_SAPLING',
-    file: `${PREFIX}f43550f5-37dc-469f-b9a2-a231f32dbeda__1_-ca7bca93-6953-4c8b-adae-91e138d705a4.png`,
-  },
-  { name: 'SPRITE_FULL', file: `${PREFIX}image-dab3dbda-fff5-4687-93b6-29a09a16578b.png` },
+  { name: 'SPRITE_DIRT', file: 'dirt.png' },
+  { name: 'SPRITE_SPROUT', file: 'sprout.png' },
+  { name: 'SPRITE_SAPLING', file: 'sapling.png' },
+  { name: 'SPRITE_FULL', file: 'full-tree.png' },
 ];
 
 function dist2(r, g, b, R, G, B) {
